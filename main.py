@@ -19,6 +19,7 @@ if __name__ == "__main__":
     house_hold_debt_eu = pd.read_csv('eu_household_debt_2000_2019.csv')
     unemployement_eu = pd.read_csv('eu_unemployement_2000_2020.csv')
     disposable_income_eu = pd.read_csv('eu_disposable_income_2000_2019.csv')
+    wages_eu = pd.read_csv('eu_wages_2000-2019.csv')
 
     while True:
         begin = str(input('Please enter the begin year as follows: yyyy-mm. '))
@@ -55,4 +56,6 @@ if __name__ == "__main__":
     object.unemployement(data = unemployement_eu)
     print('\n')
     object.disposable_income(data=disposable_income_eu)
+    print('\n')
+    object.wages(data = wages_eu)
 
