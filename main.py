@@ -21,7 +21,13 @@ if __name__ == "__main__":
         else:
             break
 
-    print('test')
+    while True:
+        country = str(input('Please enter the country code: '))
+        if bool(re.match('[A-Z]{3}|[A-Z]{4}', country)) == False:
+            print('Sorry, I did not quite catch that. Please try again')
+            continue
+        else:
+            break
 
-    object = Indicators(begin = begin, end = end)
+    object = Indicators(country = country, begin = begin, end = end)
     object.consumer_confidence(data=consumer_conf_data_eu)
