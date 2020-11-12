@@ -58,7 +58,60 @@ class Indicators:
         delta = (np.array(subset['Value'])[1] - np.array(subset['Value'])[0]) / np.array(subset['Value'])[1]
 
         # Return the difference
+        print('The household debt in ' + str(begin_year) + ' was '+ str(np.array(subset['Value'])[0]) + '.\nThe household debt in ' + str(end_year) + ' was ' + str(np.array(subset['Value'])[1]) +  '.')
+
         print('The household debt in ' + self.country + ' from ' + str(begin_year) + ' to ' + str(end_year) + ' has ' + str(
             'decreased' if delta < 0 else 'increased') + ' by ' + str(round(delta, 3)) + '.')
+
+    def unemployement(self, data):
+        # Subset Country
+        data = data[data['LOCATION'] == self.country]
+
+        begin_year = re.search('[0-9]{4}', self.begin)
+        end_year = re.search('[0-9]{4}', self.end)
+
+        begin_year = int(begin_year.group(0))
+        end_year = int(end_year.group(0))
+
+        # Subset for the given time frame
+        subset = data[(data['TIME'] == begin_year) | (data['TIME'] == end_year)]
+
+        # Compute the difference
+        delta = (np.array(subset['Value'])[1] - np.array(subset['Value'])[0]) / np.array(subset['Value'])[1]
+
+        # Return the difference
+        print('The unemployment rate in ' + str(begin_year) + ' was ' + str(
+            np.array(subset['Value'])[0]) + '.\nThe unemployment rate in ' + str(end_year) + ' was ' + str(
+            np.array(subset['Value'])[1]) + '.')
+
+        print('The unemployment rate in ' + self.country + ' from ' + str(begin_year) + ' to ' + str(
+            end_year) + ' has ' + str(
+            'decreased' if delta < 0 else 'increased') + ' by ' + str(round(delta, 3)) + '.')
+
+    def disposable_income(self, data):
+        # Subset Country
+        data = data[data['LOCATION'] == self.country]
+
+        begin_year = re.search('[0-9]{4}', self.begin)
+        end_year = re.search('[0-9]{4}', self.end)
+
+        begin_year = int(begin_year.group(0))
+        end_year = int(end_year.group(0))
+
+        # Subset for the given time frame
+        subset = data[(data['TIME'] == begin_year) | (data['TIME'] == end_year)]
+
+        # Compute the difference
+        delta = (np.array(subset['Value'])[1] - np.array(subset['Value'])[0]) / np.array(subset['Value'])[1]
+
+        # Return the difference
+        print('The disposable income (in percentage points) in ' + str(begin_year) + ' was ' + str(
+            np.array(subset['Value'])[0]) + '.\nThe disposable income in ' + str(end_year) + ' was ' + str(
+            np.array(subset['Value'])[1]) + '.')
+
+        print('The disposable income rate in ' + self.country + ' from ' + str(begin_year) + ' to ' + str(
+            end_year) + ' has ' + str(
+            'decreased' if delta < 0 else 'increased') + ' by ' + str(round(delta, 3)) + '.')
+
 
 
