@@ -33,10 +33,5 @@ class LoadData:
         return article_text
 
 
-article_list =['Economie_van_Nederland', 'Geschiedenis_van_Nederland', 'Economie_(systeem)', 'Bruto_nationaal_product', 'Bruto_binnenlands_product', 'Aandelenindex']
 
-
-object = LoadData(string_list=article_list)
-text = object.return_data()
-print(text)
 
