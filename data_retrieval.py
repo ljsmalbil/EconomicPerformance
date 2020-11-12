@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import re
 
+# Data was retrieved from https://data.oecd.org/hha/household-debt.htm#indicator-chart
+
 from indicators import Indicators
 from numpy import diff
 

@@ -5,6 +5,7 @@ import re
 if __name__ == "__main__":
     consumer_conf_data_eu = pd.read_csv('eu_consumer_conf_2000_2020.csv')
     gdp_eu = pd.read_csv('eu_gdp_2000_2020.csv')
+    house_hold_debt_eu = pd.read_csv('eu_household_debt_2000_2019.csv')
 
     while True:
         begin = str(input('Please enter the begin year as follows: yyyy-mm. '))
@@ -33,3 +34,5 @@ if __name__ == "__main__":
     object = Indicators(country = country, begin = begin, end = end)
     object.consumer_confidence(data=consumer_conf_data_eu)
     object.gdp(data = gdp_eu)
+    object.household_debt(data = house_hold_debt_eu)
+
