@@ -24,8 +24,12 @@ article_text = article_text.lower()
 
 
 article_text = re.sub(r'[^A-Za-z. ]', '', article_text)
-print(article_text)
+print(type(article_text))
 
+
+
+
+"""
 
 ngrams = {}
 words = 3
@@ -59,3 +63,4 @@ print('check')
 print(curr_sequence)
 
 
+"""
